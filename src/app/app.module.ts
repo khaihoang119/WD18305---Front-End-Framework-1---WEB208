@@ -12,6 +12,7 @@ import { TaskListComponent } from './task/task-list/task-list.component';
 import { CreateTaskComponent } from './task/create-task/create-task.component';
 import { CreateComponent } from './account/create/create.component';
 import { LoginComponent } from './account/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoginComponent } from './account/login/login.component';
     CreateTaskComponent,
     CreateComponent,
     LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [
