@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản Lý Nhân Viên</title>
+  <link rel="shortcut icon" type="image/png" href="../../../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="../../../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+            <img src="../../../assets/images/logos/dark-logo.svg" width="180" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Trang Chủ</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="dashboard" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/459022/dashboard.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Thống Kê</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Dự Án</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="project-list" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/486798/project.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Danh sách dự án</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="create-project" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/486800/project-new.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Thêm dự án</span>
+              </a>
+            </li> 
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Nhiệm vụ</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="task-list" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/310079/task-list.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Danh sách nhiệm vụ</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="create-task" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/310081/task-list-add.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Thêm nhiệm vụ</span>
+              </a>
+            </li> 
+
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Tài khoản</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="login" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/469797/sign-in-double-arrow.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Đăng nhập</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" routerLink="create" aria-expanded="false">
+                <span>
+                  <img src="https://www.svgrepo.com/show/442806/user-add.svg"  width="20" alt="">
+                </span>
+                <span class="hide-menu">Đăng ký</span>
+              </a>
+            </li> 
+          </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+   
+  </div>
+</body>
+<script src="../../../assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="../../../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../../assets/js/sidebarmenu.js"></script>
+<script src="../../../assets/js/app.min.js"></script>
+<script src="../../../assets/libs/simplebar/dist/simplebar.js"></script>
+<script src="../../../assets/js/dashboard.js"></script>
+
+</html>
