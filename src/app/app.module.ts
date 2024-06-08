@@ -14,8 +14,9 @@ import { CreateComponent } from './account/create/create.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PostService } from './post.service';
-import { projectService } from './project.service';
+
 import { HttpClientModule } from '@angular/common/http';
+import { projectService } from './project.service';
 
 @NgModule({
   declarations: [
