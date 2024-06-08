@@ -13,6 +13,9 @@ import { CreateTaskComponent } from './task/create-task/create-task.component';
 import { CreateComponent } from './account/create/create.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { PostService } from './post.service';
+import { projectService } from './project.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,10 @@ import { RegisterComponent } from './auth/register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ PostService,projectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@ import { CreateComponent } from './account/create/create.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'project-list', component: ProjectListComponent},
+  { path: 'list-project', component: ProjectListComponent},
   { path: 'create-project', component: CreateProjectComponent},
   { path: 'create-task', component: CreateTaskComponent},
   { path: 'task-list', component: TaskListComponent},
