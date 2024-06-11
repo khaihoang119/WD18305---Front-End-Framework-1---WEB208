@@ -54,20 +54,33 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Tên dự án</th>
-                      <th scope="col">Ngày bắt đầu dự án</th>
-                      <th scope="col">Số thành viên</th>
-                      <th scope="col">Hành động</th>
+                      <th scope="col" class="text-center">#</th>
+                      <th scope="col" class="text-center">Tên dự án</th>
+                      <th scope="col" class="text-center">Miêu tả</th>
+                      <th scope="col" class="text-center">Số lượng thành viên</th>
+                      <th scope="col" class="text-center">Ngày bắt đầu</th>
+                      <th scope="col" class="text-center">Ngày kết thúc</th>
+                      <th scope="col" class="text-center">Ngân sách</th>
+                      <th scope="col" class="text-center">Hành động</th>
+                      <th scope="col" class="text-center">Ngày bắt đầu</th>
+                      <th scope="col" class="text-center">Ngày kết thúc</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Dự án 1</td>
-                      <td>20/11/2004</td>
-                      <td>20</td>
-                      <td><input type="button" value="Sửa" class="btn btn-warning"> <input type="button" value="Xóa" class="btn btn-danger"></td>
+                  <tbody *ngIf="projects.length >= 1 && !isLoading">
+                    <tr *ngFor="let project of projects; let i = index">
+                      <td class="text-center">{{ i + 1 }}</td>
+                      <td class="text-center">{{ project.name }}</td>
+                      <td class="text-center">{{ project.description }}</td>
+                      <td class="text-center">{{ i + 1 }}</td>
+                      <td class="text-center">{{ project.start_date }}</td>
+                      <td class="text-center">{{ project.end_date }}</td>
+                      <td class="text-center">{{ project.budget }}</td>
+                      <td class="text-center">{{ project.created_at }}</td>
+                      <td class="text-center">{{ project.updated_at }}</td>
+                      <td>
+                        <i class="fa fa-solid fa-pencil text-success" (click)="selectPost(post)"></i>
+                        <i class="fa fa-trash text-danger" (click)="onDelete(post._id)"></i>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

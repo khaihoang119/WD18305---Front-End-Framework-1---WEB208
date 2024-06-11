@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'list-project', component: ProjectListComponent},
   { path: 'create-project', component: CreateProjectComponent},
   { path: 'create-task', component: CreateTaskComponent},
-  { path: 'task-list', component: TaskListComponent},
+  { path: 'list-task', component: TaskListComponent},
   { path: 'login', component: LoginComponent},
   { path: 'create', component: CreateComponent}
 
