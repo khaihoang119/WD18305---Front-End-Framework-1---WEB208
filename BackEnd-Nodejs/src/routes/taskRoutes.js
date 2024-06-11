@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const taskController = require('../controllers/projectController'); // Assuming the controller filename hasn't changed
+const taskController = require('../controllers/taskController'); // Assuming the controller filename hasn't changed
 
 // CRUD routes
 router.post('/tasks', taskController.createTask);

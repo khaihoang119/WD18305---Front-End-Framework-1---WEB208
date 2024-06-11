@@ -5,9 +5,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
 import { CreateProjectComponent } from './project/create-project/create-project.component';
 import { CreateTaskComponent } from './task/create-task/create-task.component';
-import { TaskListComponent } from './task/task-list/task-list.component';
 import { LoginComponent } from './account/login/login.component';
 import { CreateComponent } from './account/create/create.component';
+import { TaskListComponent } from './task/task-list/task-list.component';
 
 
 
