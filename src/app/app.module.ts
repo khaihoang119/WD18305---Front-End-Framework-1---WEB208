@@ -57,7 +57,7 @@ import { PostService } from './post.service';
     HttpClientModule,
    
   ],
-  providers: [ PostService,projectService, TaskService],
+  providers: [ PostService, projectService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
