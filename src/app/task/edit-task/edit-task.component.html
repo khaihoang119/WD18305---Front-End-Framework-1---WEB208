@@ -1,0 +1,38 @@
+<div class="card-body">
+  <h5 class="card-title fw-semibold mb-4">Edit Task</h5>
+  <form (submit)="updateTask()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="task.name" name="name" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea class="form-control" id="description" [(ngModel)]="task.description" name="description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="assignee_id" class="form-label">Assignee ID:</label>
+      <input type="text" class="form-control" id="assignee_id" [(ngModel)]="task.assignee_id" name="assignee_id">
+    </div>
+    <div class="mb-3">
+      <label for="priority" class="form-label">Priority:</label>
+      <select class="form-control" id="priority" [(ngModel)]="task.priority" name="priority" required>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Status:</label>
+      <select class="form-control" id="status" [(ngModel)]="task.status" name="status" required>
+        <option value="todo">To Do</option>
+        <option value="in_progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="due_date" class="form-label">Due Date:</label>
+      <input type="date" class="form-control" id="due_date" [(ngModel)]="task.due_date" name="due_date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

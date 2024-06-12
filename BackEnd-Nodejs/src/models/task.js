@@ -7,12 +7,13 @@ const commentSchema = new mongoose.Schema({
 });
 
 const taskSchema = new mongoose.Schema({
+  project_id: { type: mongoose.Schema.Types.ObjectId, ref: 'projects' },
   name: { type: String, required: true },
   description: { type: String, required: true },
-  leader_id: { type: String, required: true },
-  start_date: { type: Date, required: true },
-  end_date: { type: Date, required: true },
+  assignee_id: { type: mongoose.Schema.Types.ObjectId, ref: 'users'},
   status: { type: String, required: true },
+  priority: { type: String, required: true },
+  due_date: { type: Date, required: true },
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 });

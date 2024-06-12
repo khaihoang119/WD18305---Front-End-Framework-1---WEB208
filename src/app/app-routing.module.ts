@@ -9,6 +9,7 @@ import { CreateComponent } from './account/create/create.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
 import { ProjectListComponent } from './project/project-list/project-list.component';
+import { EditTaskComponent } from './task/edit-task/edit-task.component';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'edit-project/:id', component: EditProjectComponent},
   { path: 'create-task', component: CreateTaskComponent},
   { path: 'list-task', component: TaskListComponent},
+  { path: 'edit-task/:id', component: EditTaskComponent},
   { path: 'login', component: LoginComponent},
   { path: 'create', component: CreateComponent}
 

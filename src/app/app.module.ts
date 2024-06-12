@@ -27,6 +27,7 @@ import { CommonModule } from '@angular/common';
 import { TaskService } from './task.service';
 import { projectService } from './project.service';
 import { PostService } from './post.service';
+import { EditTaskComponent } from './task/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PostService } from './post.service';
     CreateComponent,
      LoginComponent,
     RegisterComponent,
+    EditTaskComponent,
    
 
   ],
