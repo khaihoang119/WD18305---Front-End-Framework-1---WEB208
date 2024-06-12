@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProjectListComponent } from './project/project-list/project-list.component';
 import { CreateProjectComponent } from './project/create-project/create-project.component';
 import { CreateTaskComponent } from './task/create-task/create-task.component';
 import { LoginComponent } from './account/login/login.component';
 import { CreateComponent } from './account/create/create.component';
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { EditProjectComponent } from './project/edit-project/edit-project.component';
+import { ProjectListComponent } from './project/project-list/project-list.component';
+
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
