@@ -28,6 +28,8 @@ import { TaskService } from './task.service';
 import { projectService } from './project.service';
 import { PostService } from './post.service';
 import { EditTaskComponent } from './task/edit-task/edit-task.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { EditTaskComponent } from './task/edit-task/edit-task.component';
      LoginComponent,
     RegisterComponent,
     EditTaskComponent,
+    AdminComponent,
    
 
   ],
@@ -59,7 +62,7 @@ import { EditTaskComponent } from './task/edit-task/edit-task.component';
     HttpClientModule,
    
   ],
-  providers: [ PostService,projectService, TaskService],
+  providers: [ PostService,projectService, TaskService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
