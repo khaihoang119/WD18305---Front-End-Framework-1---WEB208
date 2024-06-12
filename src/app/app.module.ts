@@ -16,6 +16,10 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PostService } from './post.service';
 import { projectService } from './project.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskService } from './task.service';
+import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { EditProjectComponent } from './project/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +34,19 @@ import { HttpClientModule } from '@angular/common/http';
     CreateComponent,
     LoginComponent,
     RegisterComponent,
+    EditProjectComponent,
 
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
+   
   ],
-  providers: [ PostService,projectService],
+  providers: [ PostService,projectService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ const postRoutes = require('./routes/postRoutes');
 const authRoutes = require('./routes/auth');
 const projectRoutes = require('./routes/projectRoutes');
 const taskRoutes = require('./routes/taskRoutes');
+const userRoutes = require('./routes/userRoutes');
 const dotenv = require('dotenv');
 const cors = require('cors');
 // const project = require('./models/project');
@@ -35,6 +36,7 @@ app.use('/api', postRoutes);
 app.use('/api', authRoutes);
 app.use('/api', projectRoutes);
 app.use('/api', taskRoutes);
+app.use('/api', userRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;

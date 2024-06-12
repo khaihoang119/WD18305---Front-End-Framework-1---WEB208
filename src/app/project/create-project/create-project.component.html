@@ -16,13 +16,7 @@
       </ul>
       <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
         <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-          <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/" target="_blank"
-            class="btn btn-primary">Download Free</a>
           <li class="nav-item dropdown">
-            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <img src="../assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
-            </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
               <div class="message-body">
                 <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
@@ -52,25 +46,30 @@
         <h5 class="card-title fw-semibold mb-4 p-6">Dự án</h5>
         <div class="card">
           <div class="card-body">
-            <form>
+            <form (ngSubmit)="onSubmit()" #projectForm="ngForm">
               <div class="mb-3">
-                <label for="id" class="form-label">ID dự án</label>
-                <input type="email" class="form-control" id="id" disabled>
+                <label for="name" class="form-label">Tên dự án</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="project.name" required>
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">Tên dự án</label>
-                <input type="email" class="form-control" id="email">
+                <label for="description" class="form-label">Miêu tả</label>
+                <input type="text" class="form-control" id="description" name="description" [(ngModel)]="project.description" required>
               </div>
               <div class="mb-3">
-                <label for="date" class="form-label">Ngày bắt đầu dự án</label>
-                <input type="date" class="form-control" id="date">
+                <label for="budget" class="form-label">Ngân sách</label>
+                <input type="text" class="form-control" id="budget" name="budget" [(ngModel)]="project.budget" required>
               </div>
               <div class="mb-3">
-                <label for="number" class="form-label">Số thành viên</label>
-                <input type="number" class="form-control" id="number">
+                <label for="start_date" class="form-label">Ngày bắt đầu</label>
+                <input type="date" class="form-control" id="start_date" name="start_date" [(ngModel)]="project.start_date" required>
+              </div>
+              <div class="mb-3">
+                <label for="end_date" class="form-label">Ngày kết thúc</label>
+                <input type="date" class="form-control" id="end_date" name="end_date" [(ngModel)]="project.end_date" required>
               </div>
               <button type="submit" class="btn btn-primary">Lưu</button>
             </form>
+            
           </div>
         </div>  
       </div>
