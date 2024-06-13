@@ -1,3 +1,64 @@
-<p>
-  register works!
-</p>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modernize Free</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+      class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-6 col-xxl-3">
+            <div class="card mb-0">
+              <div class="card-body">
+                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
+                </a>
+                <p class="text-center">Your Social Campaigns</p>
+                <form (ngSubmit)="register()" #registerForm="ngForm">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Họ và tên</label>
+                    <input type="text" class="form-control" [(ngModel)]="name" name="name" id="name" required>
+                    <div *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched)">
+                      <div *ngIf="registerForm.controls.name.errors?.required">Vui lòng nhập họ và tên.</div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Địa chỉ email</label>
+                    <input type="email" class="form-control" [(ngModel)]="email" name="email" id="email" required email>
+                    <div *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)">
+                      <div *ngIf="registerForm.controls.email.errors?.required">Vui lòng nhập địa chỉ email.</div>
+                      <div *ngIf="registerForm.controls.email.errors?.email">Địa chỉ email không hợp lệ.</div>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control" [(ngModel)]="password" name="password" id="password" required>
+                    <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)">
+                      <div *ngIf="registerForm.controls.password.errors?.required">Vui lòng nhập mật khẩu.</div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100 py-2 fs-4 mb-4 rounded-2">Đăng kí</button>
+                  <div *ngIf="error" class="text-danger">{{ error }}</div> <!-- Display error message if registration fails -->
+                </form>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
