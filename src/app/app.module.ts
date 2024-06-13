@@ -14,7 +14,6 @@ import { EditProjectComponent } from './project/edit-project/edit-project.compon
 import { TaskListComponent } from './task/task-list/task-list.component';
 import { CreateTaskComponent } from './task/create-task/create-task.component';
 
-import { CreateComponent } from './account/create/create.component';
 import { LoginComponent } from './account/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 
@@ -30,7 +29,8 @@ import { PostService } from './post.service';
 import { EditTaskComponent } from './task/edit-task/edit-task.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
-
+import { UserService } from './user.service';
+import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,8 +45,7 @@ import { AuthGuard } from './auth.guard';
     TaskListComponent,
     CreateTaskComponent,
 
-    CreateComponent,
-     LoginComponent,
+    LoginComponent,
     RegisterComponent,
     EditTaskComponent,
     AdminComponent,
@@ -62,7 +61,7 @@ import { AuthGuard } from './auth.guard';
     HttpClientModule,
    
   ],
-  providers: [ PostService,projectService, TaskService, AuthGuard],
+  providers: [ PostService,projectService, TaskService, AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
