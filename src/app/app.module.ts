@@ -60,6 +60,7 @@ import { AuthGuard } from './auth.guard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
    
   ],
   providers: [ PostService,projectService, TaskService, AuthGuard],

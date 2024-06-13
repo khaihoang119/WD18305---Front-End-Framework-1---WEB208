@@ -1,0 +1,36 @@
+.custom-select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+    padding: 10px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #000; /* Set text color to black */
+  }
+  
+  .custom-select:focus {
+    outline: none; /* Remove focus outline */
+  }
+  
+  .custom-select::after {
+    content: '▼'; /* Unicode down arrow symbol */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust distance from right edge */
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure arrow doesn't interfere with clicking */
+  }
+  
+  .custom-select.disabled {
+    pointer-events: none; /* Disable clicking */
+    opacity: 0.6; /* Optional: Reduce opacity for disabled look */
+  }
+  
+  /* Style options */
+  .custom-select option {
+    color: #000; /* Set option text color to black */
+  }
+  

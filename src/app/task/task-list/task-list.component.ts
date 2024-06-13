@@ -46,11 +46,11 @@ export class TaskListComponent implements OnInit {
   onDelete(_id: string) {
     this.taskService.deleteTask(_id).subscribe(
       (data: any) => {
-        console.log("Xóa thành công", data);
+        alert("Xóa thành công: " + data);
         this.fetchAllTasks(); 
       },
       (error) => {
-        console.log("Lỗi xóa", error);
+        alert("Lỗi xóa"+ error);
       }
     );
   }

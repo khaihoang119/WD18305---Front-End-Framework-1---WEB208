@@ -13,7 +13,6 @@ import { EditTaskComponent } from './task/edit-task/edit-task.component';
 
 
 
-
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
@@ -22,9 +21,9 @@ const routes: Routes = [
   { path: 'edit-project/:id', component: EditProjectComponent},
   { path: 'create-task', component: CreateTaskComponent},
   { path: 'list-task', component: TaskListComponent},
-  { path: 'edit-task', component: EditTaskComponent},
+  { path: 'edit-task/:id', component: EditTaskComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'create', component: CreateComponent},
+  { path: 'register', component: CreateComponent},
 
 ];
 
