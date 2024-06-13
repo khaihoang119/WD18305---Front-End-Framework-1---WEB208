@@ -48,7 +48,8 @@
                       </td>
                       <td class="text-center">{{ task.priority }}</td>
                       <td class="text-center">{{ task.status }}</td>
-                      <td class="text-center">{{ task.due_date }}</td>
+                      <td class="text-center">{{ task.due_date | date:'dd/MM/yyyy' }}</td>
+
                       <td>
                         <i class="fa fa-solid fa-pencil text-success" (click)="editTask(task._id)"></i>
                         <i class="fa fa-trash text-danger" (click)="onDelete(task._id)"></i>
