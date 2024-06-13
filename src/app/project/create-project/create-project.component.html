@@ -21,6 +21,9 @@
         <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
           <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="drop2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                User
+              </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                 <div class="message-body">
                   <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
@@ -38,38 +41,42 @@
                   <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                 </div>
               </div>
-              <div class="mb-3">
-                <label for="description" class="form-label">Miêu tả</label>
-                <input type="text" class="form-control" id="description" formControlName="description">
-                <div *ngIf="projectForm.get('description').invalid && projectForm.get('description').touched"
-                  class="text-danger">
-                  Miêu tả là bắt buộc.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="budget" class="form-label">Ngân sách</label>
-                <input type="number" class="form-control" id="budget" formControlName="budget">
-                <div *ngIf="projectForm.get('budget').invalid && projectForm.get('budget').touched" class="text-danger">
-                  Ngân sách là bắt buộc.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="start_date" class="form-label">Ngày bắt đầu</label>
-                <input type="date" class="form-control" id="start_date" formControlName="start_date">
-                <div *ngIf="projectForm.get('start_date').invalid && projectForm.get('start_date').touched"
-                  class="text-danger">
-                  Ngày bắt đầu là bắt buộc.
-                </div>
-              </div>
-              <div class="mb-3">
-                <label for="end_date" class="form-label">Ngày kết thúc</label>
-                <input type="date" class="form-control" id="end_date" formControlName="end_date">
-                <div *ngIf="projectForm.get('end_date').invalid && projectForm.get('end_date').touched"
-                  class="text-danger">
-                  Ngày kết thúc là bắt buộc.
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Lưu</button>
+            </li>
+          </ul>
         </div>
+      </nav>
+    </header>
+
+    <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="description" class="form-label">Miêu tả</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+        <div *ngIf="projectForm.get('description').invalid && projectForm.get('description').touched" class="text-danger">
+          Miêu tả là bắt buộc.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="budget" class="form-label">Ngân sách</label>
+        <input type="number" class="form-control" id="budget" formControlName="budget">
+        <div *ngIf="projectForm.get('budget').invalid && projectForm.get('budget').touched" class="text-danger">
+          Ngân sách là bắt buộc.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="start_date" class="form-label">Ngày bắt đầu</label>
+        <input type="date" class="form-control" id="start_date" formControlName="start_date">
+        <div *ngIf="projectForm.get('start_date').invalid && projectForm.get('start_date').touched" class="text-danger">
+          Ngày bắt đầu là bắt buộc.
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="end_date" class="form-label">Ngày kết thúc</label>
+        <input type="date" class="form-control" id="end_date" formControlName="end_date">
+        <div *ngIf="projectForm.get('end_date').invalid && projectForm.get('end_date').touched" class="text-danger">
+          Ngày kết thúc là bắt buộc.
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Lưu</button>
+    </form>
   </div>
 </div>

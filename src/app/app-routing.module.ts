@@ -13,7 +13,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './auth/register/register.component';
 
 
-
+ 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -28,7 +28,7 @@ const routes: Routes = [
   // { path: 'register', component: CreateComponent},
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent },
-  { path: 'create', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent}
 
 ];
 
