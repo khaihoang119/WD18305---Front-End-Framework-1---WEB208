@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="body-wrapper mt-6 col-lg-10">
+    <div class="container-fluid mt-4">
+      <div class="container-fluid">
+        
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Danh sách tài khoản</h5>
+            <div *ngIf="isAlert" class="alert alert-success">Xóa thành công</div>
+            <div class="card mb-0">
+              <div class="card-body p-8">
+                <div class="alert alert-primary" role="alert">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="text-center">Id</th>
+                        <th scope="col" class="text-center">Tên</th>
+                        <th scope="col" class="text-center">Email</th>
+                        <th scope="col" class="text-center">Vai trò</th>
+                        <th scope="col" class="text-center">Thao tác</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngIf="users.length >= 1 && !isLoading">
+                      <tr *ngFor="let user of users; let i = index">
+                        <td class="text-center">{{ i + 1 }}</td>
+                        <td class="text-center">{{ user.name }}</td>
+                        <td class="text-center">{{ user.email }}</td>
+                        <td class="text-center">{{ user.role }}</td>
+                        <td class="text-center">
+                          <i class="fa fa-solid fa-pencil text-success" (click)="editUser(user._id)"></i>
+                          <i class="fa fa-trash text-danger" (click)="onDelete(user._id)"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

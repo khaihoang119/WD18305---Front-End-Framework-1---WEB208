@@ -31,6 +31,11 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { AuthService } from './auth.service';
+
+
+import { ListUserComponent } from './user/list-user/list-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +54,10 @@ import { AuthService } from './auth.service';
     RegisterComponent,
     EditTaskComponent,
     AdminComponent,
+
+    ListUserComponent,
+    EditUserComponent,
+    CreateUserComponent,
    
 
   ],
@@ -62,7 +71,7 @@ import { AuthService } from './auth.service';
     ReactiveFormsModule,
    
   ],
-  providers: [ PostService,projectService, TaskService, AuthGuard, AuthService],
+  providers: [ PostService,projectService, TaskService, AuthGuard, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

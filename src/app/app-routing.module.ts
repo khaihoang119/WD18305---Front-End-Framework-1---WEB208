@@ -11,6 +11,9 @@ import { ProjectListComponent } from './project/project-list/project-list.compon
 import { EditTaskComponent } from './task/edit-task/edit-task.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
+import { ListUserComponent } from './user/list-user/list-user.component';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
 
 
  
@@ -24,8 +27,9 @@ const routes: Routes = [
   { path: 'create-task', component: CreateTaskComponent},
   { path: 'list-task', component: TaskListComponent},
   { path: 'edit-task/:id', component: EditTaskComponent},
-  { path: 'login', component: LoginComponent},
-  // { path: 'register', component: CreateComponent},
+  { path: 'list-user', component: ListUserComponent},
+  { path: 'edit-user/:id', component: EditUserComponent},
+  { path: 'create-user', component: CreateUserComponent},
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent },
   { path: 'register', component: RegisterComponent}
