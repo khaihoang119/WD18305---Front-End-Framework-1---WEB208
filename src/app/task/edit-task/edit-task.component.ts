@@ -34,21 +34,17 @@ export class EditTaskComponent implements OnInit {
       },
       error => {
         console.log('Error fetching task details:', error);
-        // Handle error here, such as displaying a toast message or redirecting
       }
     );
   }
-
   updateTask() {
     this.taskService.updateTask(this.taskId, this.task).subscribe(
       (data: any) => {
-        console.log('Task updated successfully:', data);
-        // Optionally, you can redirect to task details page or show a success message
+        alert('Cập nhật thành công:' + data);
         this.router.navigate(['/list-task']);
       },
       error => {
-        console.log('Error updating task:', error);
-        // Handle error here, such as displaying a toast message
+        alert('Cập nhật thất bại:'+ error);
       }
     );
   }

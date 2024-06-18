@@ -73,9 +73,9 @@
                       <td class="text-center">{{ i + 1 }}</td>
                       <td class="text-center">{{ project.name }}</td>
                       <td class="text-center">{{ project.description }}</td>
-                      <td class="text-center">{{ project.start_date }}</td>
-                      <td class="text-center">{{ project.end_date }}</td>
-                      <td class="text-center">{{ project.budget }}</td>
+                      <td class="text-center">{{ project.start_date | date:'dd/MM/yyyy'}}</td>
+                      <td class="text-center">{{ project.end_date | date:'dd/MM/yyyy'}}</td>
+                      <td class="text-center">{{ project.budget | currency: 'vnd'}}</td>
                       <td>
                         <i class="fa fa-solid fa-pencil text-success" (click)="editProject(project._id)"></i>
                         <i class="fa fa-trash text-danger" (click)="onDelete(project._id)"></i>

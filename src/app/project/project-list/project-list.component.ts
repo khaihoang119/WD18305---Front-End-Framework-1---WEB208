@@ -47,12 +47,11 @@ export class ProjectListComponent implements OnInit {
   onDelete(_id: string) {
     this.projectService.deleteProject(_id).subscribe(
       (data: any) => {
-        console.log("Xóa thành công", data);
+        alert("Xóa thành công"+ data);
         this.fetchAllProjects();
       },
       (error) => {
-        console.log("Lỗi xóa", error);
-        // Handle error here, such as displaying a toast message
+        alert("Xóa không thành công"+ error);
       }
     );
   }

@@ -29,11 +29,11 @@ export class CreateTaskComponent implements OnInit {
   createTask() {
     this.taskService.createTask(this.task).subscribe(
       (data: any) => {
-        console.log("Thêm công việc thành công", data);
+        alert("Thêm công việc thành công"+ data);
         this.router.navigate(['/list-task']);
       },
       (error: any) => {
-        console.error("Có lỗi xảy ra", error);
+        alert("Thêm thất bại"+ error);
       }
     );
   }

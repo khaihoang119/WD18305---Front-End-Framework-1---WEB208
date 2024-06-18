@@ -49,13 +49,32 @@
                   <tbody *ngIf="tasks.length >= 1 && !isLoading">
                     <tr *ngFor="let task of tasks; let i = index">
                       <td class="text-center">{{ i + 1 }}</td>
-                      <td class="text-center">{{ task.project_id}}</td>
+                      <!-- <td class="text-center">{{ task.project_id}}</td> -->
+                      <td>
+                        <div class="form-group">
+                          <select disabled class="custom-select border border-0" name="assignee_id" id="assignee_id"
+                            [(ngModel)]="task.project_id">
+                            <option value="6667a0f85238b3068ce2777f">Quản lý cửa hàng thú cưng</option>
+                            <option value="666959b4e6e00c5dc85fe06d">dự án web bán hàng</option>
+                          </select>
+                        </div>
+                      </td>
+
                       <td class="text-center">{{ task.name }}</td>
                       <td class="text-center">{{ task.description }}</td>
-                      <td class="text-center">{{ task.assignee_id }}</td>
+                      <td>
+                        <div class="form-group">
+                          <select disabled class="custom-select border border-0" name="assignee_id" id="assignee_id"
+                            [(ngModel)]="task.assignee_id">
+                            <option value="666938e02ad4e551fc4c4735">Trần Hữu Đạt</option>
+                            <option value="6669390b2ad4e551fc4c4737">Nguyễn Khải Hoàng</option>
+                          </select>
+                        </div>
+                      </td>
                       <td class="text-center">{{ task.priority }}</td>
                       <td class="text-center">{{ task.status }}</td>
-                      <td class="text-center">{{ task.due_date }}</td>
+                      <td class="text-center">{{ task.due_date | date:'dd/MM/yyyy' }}</td>
+
                       <td>
                         <i class="fa fa-solid fa-pencil text-success" (click)="editTask(task._id)"></i>
                         <i class="fa fa-trash text-danger" (click)="onDelete(task._id)"></i>

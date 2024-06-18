@@ -1,26 +1,47 @@
 <div class="card-body">
-  <h5 class="card-title fw-semibold mb-4">Edit Project</h5>
-  <form (submit)="updateProject()">
-    <div class="mb-3">
-      <label for="name" class="form-label">Name:</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="project.name" name="name" required>
+  <h2 class="card-title fw-semibold mb-4">Cập nhật dự án</h2>
+  <div class="card mb-0">
+    <div class="card-body">
+      <div class="alert alert-primary">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="name" class="form-label">Tên:</label>
+            <input type="text" class="form-control" id="name" formControlName="name">
+            <div *ngIf="projectForm.get('name').invalid && projectForm.get('name').touched" class="text-danger">
+              Tên dự án là bắt buộc.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Mô tả:</label>
+            <textarea class="form-control" id="description" formControlName="description" rows="3"></textarea>
+            <div *ngIf="projectForm.get('description').invalid && projectForm.get('description').touched" class="text-danger">
+              Mô tả là bắt buộc.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="startDate" class="form-label">Ngày bắt đầu:</label>
+            <input type="date" class="form-control" id="startDate" formControlName="start_date">
+            <div *ngIf="projectForm.get('start_date').invalid && projectForm.get('start_date').touched" class="text-danger">
+              Ngày bắt đầu là bắt buộc.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="endDate" class="form-label">Ngày kết thúc:</label>
+            <input type="date" class="form-control" id="endDate" formControlName="end_date">
+            <div *ngIf="projectForm.get('end_date').invalid && projectForm.get('end_date').touched" class="text-danger">
+              Ngày kết thúc là bắt buộc.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="budget" class="form-label">Ngân sách:</label>
+            <input type="number" class="form-control" id="budget" formControlName="budget">
+            <div *ngIf="projectForm.get('budget').invalid && projectForm.get('budget').touched" class="text-danger">
+              Ngân sách là bắt buộc.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Cập nhật</button>
+        </form>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="description" class="form-label">Description:</label>
-      <textarea class="form-control" id="description" [(ngModel)]="project.description" name="description" rows="3" required></textarea>
-    </div>
-    <div class="mb-3">
-      <label for="startDate" class="form-label">Start Date:</label>
-      <input type="date" class="form-control" id="startDate" [(ngModel)]="project.start_date" name="startDate" required>
-    </div>
-    <div class="mb-3">
-      <label for="endDate" class="form-label">End Date:</label>
-      <input type="date" class="form-control" id="endDate" [(ngModel)]="project.end_date" name="endDate" required>
-    </div>
-    <div class="mb-3">
-      <label for="budget" class="form-label">Budget:</label>
-      <input type="number" class="form-control" id="budget" [(ngModel)]="project.budget" name="budget" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Update</button>
-  </form>
+  </div>
 </div>

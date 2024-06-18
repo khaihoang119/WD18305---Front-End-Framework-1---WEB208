@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { projectService } from '../../project.service';
 
@@ -9,46 +10,54 @@ import { projectService } from '../../project.service';
 })
 export class EditProjectComponent implements OnInit {
   projectId: string;
-  project: any = {}; // Define a property to hold project details
+  projectForm: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private projectService: projectService
   ) { }
 
   ngOnInit() {
-    // Get the project ID from route parameters
+    this.projectForm = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      start_date: ['', Validators.required],
+      end_date: ['', Validators.required],
+      budget: ['', [Validators.required, Validators.min(0)]],
+    });
+
     this.route.params.subscribe(params => {
       this.projectId = params['id'];
-      // Fetch project details based on the ID
       this.getProjectDetails(this.projectId);
     });
   }
-
-  // Fetch project details by ID
   getProjectDetails(id: string) {
     this.projectService.getProjectById(id).subscribe(
       (data: any) => {
-        this.project = data; // Set the retrieved project details
+        this.projectForm.patchValue(data);
       },
       error => {
         console.log('Error fetching project details:', error);
-        // Handle error here, such as displaying a toast message or redirecting
       }
     );
   }
   updateProject() {
-    this.projectService.updateProject(this.projectId, this.project).subscribe(
-      (data: any) => {
-        console.log('Project updated successfully:', data);
-        // Optionally, you can redirect to project details page or show a success message
-        this.router.navigate(['/list-project']);
-      },
-      error => {
-        console.log('Error updating project:', error);
-        // Handle error here, such as displaying a toast message
-      }
-    );
+    if (this.projectForm.valid) {
+      this.projectService.updateProject(this.projectId, this.projectForm.value).subscribe(
+        (data: any) => {
+          alert('Cập nhật thành công:' + data);
+          this.router.navigate(['/list-project']);
+        },
+        error => {
+          alert('Cập nhật thất bại:' + error);
+        }
+      );
+    }
+  }
+
+  onSubmit() {
+    this.updateProject();
   }
 }
