@@ -8,6 +8,8 @@
       <img class="card-img-top" src="../../assets/images/profile/user-1.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title text-center">Thông Tin</h5>
+        <h1>Xin chào, {{currentUser.name}}!</h1>
+        <p *ngIf="currentUser">Welcome, {{currentUser.name}}!</p>
         <p class="card-text">Giới Thiệu Sơ Lược Về Team</p>
       </div>
       <ul class="list-group list-group-flush">
