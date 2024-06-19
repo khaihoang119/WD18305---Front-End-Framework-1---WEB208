@@ -35,4 +35,8 @@ export class TaskService {
     const url = `${this.urlTask}/${id}`;
     return this.httpService.get(url);
   }
+
+  countTasks(tasks: any[]): number {
+    return tasks.length;
+  }
 }

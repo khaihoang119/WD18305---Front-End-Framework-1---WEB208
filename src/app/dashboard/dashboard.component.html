@@ -9,17 +9,18 @@
       <div class="card-body">
         <h5 class="card-title text-center">Thông Tin</h5>
        
-        <h1><p>Tên người dùng: {{ user?.id }}</p></h1>
+        <div *ngIf="user">
+          <h3 class="card-title">Xin chào, {{ user.name }}</h3>
+        </div>
         <p class="card-text">Giới Thiệu Sơ Lược Về Team</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Số Lượng Thành Viên <h6 class="fw-semibold mb-0">2</h6>
+        <li class="list-group-item">Số Lượng Thành Viên <h6 class="fw-semibold mb-0"> {{ totalUsers }}</h6>
         </li>
-        <li class="list-group-item">Tổng Chi Phí Của Tất Cả Dự Án <h6 class="fw-semibold mb-0">100k $</h6>
+        
+        <li class="list-group-item">Các Dự Án Đang Xử Lý <h6 class="fw-semibold mb-0">{{ totalProjects }}</h6>
         </li>
-        <li class="list-group-item">Các Nhiệm Vụ Đang Xử Lý <h6 class="fw-semibold mb-0">2</h6>
-        </li>
-        <li class="list-group-item">Dự Án Sắp Triển Khai <h6 class="fw-semibold mb-0">0</h6>
+        <li class="list-group-item">Các Nhiệm Vụ Đang Xử Lý <h6 class="fw-semibold mb-0">{{ totalTasks }}</h6>
         </li>
       </ul>
     </div>
@@ -33,16 +34,18 @@
             <h5 class="card-title mb-9 fw-semibold"> Chi Phí </h5>
             <table class="table table-bordered">
               <tr>
-                <th>Chi phí dự án</th>
-                <td>100k $</td>
+                <th>Tổng ngân sách dự án:</th>
+                <td> <div class="total-budget">
+                 {{ myBudget | currency: 'VND' }}
+                </div></td>
               </tr>
               <tr>
                 <th>Hiện tại đã chi</th>
-                <td>50k $</td>
+                <td>{{ totalBudget | currency: 'VND' }}</td>
               </tr>
               <tr>
                 <th>Còn lại</th>
-                <td>50k $</td>
+                <td> {{ remainingBudget | currency: 'VND' }}</td>
               </tr>
             </table>
           </div>
@@ -57,19 +60,19 @@
               </tr>
               <tr>
                 <th>Miền Tây</th>
-                <td>20</td>
+                <td>2</td>
               </tr>
               <tr>
                 <th>Miền Nam</th>
-                <td>20</td>
+                <td>0</td>
               </tr>
               <tr>
                 <th>Miền Trung</th>
-                <td>20</td>
+                <td>0</td>
               </tr>
               <tr>
                 <th>Miền Bắc</th>
-                <td>20</td>
+                <td>0</td>
               </tr>
             </table>
           </div>

@@ -30,4 +30,12 @@ export class projectService {
     const url = `${this.urlProject}/${_id}`;
     return this.httpService.delete(url);
   }
+
+  calculateTotalBudget(projects: any[]): number {
+    return projects.reduce((acc, project) => acc + (project.budget || 0), 0);
+  }
+
+  countProjects(projects: any[]): number {
+    return projects.length;
+  }
 }

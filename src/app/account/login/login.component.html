@@ -8,7 +8,21 @@
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
+<style>
+  .login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+</style>
 <body>
   <!--  Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -28,8 +42,8 @@
                   <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" name="email" class="form-control" id="email" formControlName="email">
-                    <div *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
-                      Vui lòng nhập đúng định dạng email.
+                    <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+                      <small>Email không hợp lệ</small>
                     </div>
                   </div>
                   <div class="mb-4">
@@ -52,6 +66,9 @@
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">Bạn chưa có tài khoản</p>
                     <a class="text-primary fw-bold ms-2" href="" routerLink="/register">Tạo tài khoản</a>
+                  </div>
+                  <div *ngIf="errorMessage" class="error-message">
+                    {{ errorMessage }}
                   </div>
                 </form>
               </div>

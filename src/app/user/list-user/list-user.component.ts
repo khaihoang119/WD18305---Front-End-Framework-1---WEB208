@@ -13,6 +13,7 @@ export class ListUserComponent implements OnInit {
   users: any[];
   isLoading = false;
   user = { name: '', species: '', age: '' };
+  totalUsers: number = 0;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -26,6 +27,7 @@ export class ListUserComponent implements OnInit {
       (data: any) => {
         this.isLoading = false;
         this.users = data;
+        this.totalUsers = this.userService.countUsers(this.users);
         console.log(this.users);
       },
       (error) => {
