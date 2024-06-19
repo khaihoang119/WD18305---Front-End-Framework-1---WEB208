@@ -27,4 +27,7 @@ export class UserService {
   get(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/${id}`);
   }
+  countUsers(users: any[]): number {
+    return users.length;
+  }
 }

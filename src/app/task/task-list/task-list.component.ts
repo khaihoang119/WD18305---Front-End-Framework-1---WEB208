@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-
+  isAlert : boolean = false;
   error: string;
   tasks: any[]; 
   isLoading = false;
   task = { name: '', species: '', age: '' };
-
+  totalTasks: number = 0;
   constructor(private taskService: TaskService,private router: Router) { }
 
   ngOnInit() {
@@ -27,6 +27,7 @@ export class TaskListComponent implements OnInit {
         this.isLoading = false;
         this.tasks = data; 
         console.log(this.tasks);
+        this.totalTasks = this.taskService.countTasks(this.tasks);
       },
       (error) => {
         if (error.status === 404) {
@@ -46,7 +47,7 @@ export class TaskListComponent implements OnInit {
   onDelete(_id: string) {
     this.taskService.deleteTask(_id).subscribe(
       (data: any) => {
-        alert("Xóa thành công: " + data);
+        this.isAlert = true;
         this.fetchAllTasks(); 
       },
       (error) => {

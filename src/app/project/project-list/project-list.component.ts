@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./project-list.component.css']
 })
 export class ProjectListComponent implements OnInit {
-
+  isAlert : boolean = false;
   error: string;
   projects: any[];
   isLoading = false;
   project = { name: '', species: '', age: '' };
-  
+  totalBudget: number = 0;
+  totalProjects: number = 0;
 
   constructor(private projectService: projectService, 
     private router: Router) { }
@@ -28,7 +29,8 @@ export class ProjectListComponent implements OnInit {
       (data: any) => {
         this.isLoading = false;
         this.projects = data;
-        console.log(this.projects);
+        this.totalBudget = this.projectService.calculateTotalBudget(this.projects);
+        this.totalProjects = this.projectService.countProjects(this.projects);
       },
       (error) => {
         if (error.status === 404) {
@@ -47,7 +49,8 @@ export class ProjectListComponent implements OnInit {
   onDelete(_id: string) {
     this.projectService.deleteProject(_id).subscribe(
       (data: any) => {
-        alert("Xóa thành công"+ data);
+        
+        this.isAlert = true;
         this.fetchAllProjects();
       },
       (error) => {

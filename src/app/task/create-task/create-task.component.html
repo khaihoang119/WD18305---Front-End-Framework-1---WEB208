@@ -11,7 +11,8 @@
               <div class="card-body">
                 <form (submit)="onSubmit()">
                   <div class="form-group">
-                    <label for="project_id">Tên dự án</label>
+                    <label for="project_id">Tên nhiệm vụ</label>
+                    <div *ngIf="isAlert" class="alert alert-success">Thêm nhiệm vụ thành công</div>
                     <select class="form-control" name="project_id" id="project_id" [(ngModel)]="task.project_id">
                       <option value="6667a0f85238b3068ce2777f">Quản lý cửa hàng thú cưng</option>
                       <option value="666959b4e6e00c5dc85fe06d">dự án web bán hàng</option>

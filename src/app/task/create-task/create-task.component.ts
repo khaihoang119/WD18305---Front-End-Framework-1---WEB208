@@ -8,6 +8,7 @@ import { TaskService } from '../../task.service';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
+  isAlert : boolean = false;
   task: any = {
     project_id: '', // Initialize project_id here
     name: '',
@@ -29,6 +30,7 @@ export class CreateTaskComponent implements OnInit {
   createTask() {
     this.taskService.createTask(this.task).subscribe(
       (data: any) => {
+        this.isAlert = true;
         alert("Thêm công việc thành công"+ data);
         this.router.navigate(['/list-task']);
       },
@@ -39,6 +41,7 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isAlert = true;
     this.createTask();
   }
 }
