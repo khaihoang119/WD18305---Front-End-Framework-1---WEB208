@@ -16,7 +16,7 @@ import { RegisterComponent } from './auth/register/register.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'list-project', component: ProjectListComponent},
   { path: 'create-project', component: CreateProjectComponent},
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'create-task', component: CreateTaskComponent},
   { path: 'list-task', component: TaskListComponent},
   { path: 'edit-task/:id', component: EditTaskComponent},
-  { path: 'login', component: LoginComponent},
+  // { path: 'login', component: LoginComponent},
   // { path: 'register', component: CreateComponent},
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent },
