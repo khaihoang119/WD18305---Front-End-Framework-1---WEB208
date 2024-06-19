@@ -19,7 +19,7 @@ import { EditUserComponent } from './user/edit-user/edit-user.component';
  
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'list-project', component: ProjectListComponent},
   { path: 'create-project', component: CreateProjectComponent},

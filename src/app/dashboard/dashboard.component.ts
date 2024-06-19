@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import * as jwt_decode from 'jwt-decode';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,18 +8,15 @@ import { AuthService } from '../auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  currentUser: any;
+  user: any;
+   
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.authService.getUserInfo().subscribe(user => {
-      console.log(user);
-      this.currentUser = user;
-    }, error => {
-      console.error('Error fetching user info', error);
-    }
-  );
+      this.user = user;
+    });
   }
-
+ 
 }
