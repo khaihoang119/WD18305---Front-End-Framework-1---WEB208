@@ -11,11 +11,11 @@
               <div class="card-body">
                 <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
                   <div class="mb-3">
-                    <label for="description" class="form-label">Miêu tả</label>
-                    <input type="text" class="form-control" id="description" formControlName="description">
-                    <div *ngIf="projectForm.get('description').invalid && projectForm.get('description').touched"
+                    <label for="name" class="form-label">Tên dự án</label>
+                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <div *ngIf="projectForm.get('name').invalid && projectForm.get('name').touched"
                       class="text-danger">
-                      Miêu tả là bắt buộc.
+                      Tên dự án là bắt buộc
                     </div>
                   </div>
                   <div class="mb-3">
@@ -40,6 +40,14 @@
                     <div *ngIf="projectForm.get('end_date').invalid && projectForm.get('end_date').touched"
                       class="text-danger">
                       Ngày kết thúc là bắt buộc.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="description" class="form-label">Miêu tả</label>
+                    <input type="text" class="form-control" id="name" formControlName="description">
+                    <div *ngIf="projectForm.get('description').invalid && projectForm.get('description').touched"
+                      class="text-danger">
+                      Miêu tả dự án là bắt buộc
                     </div>
                   </div>
                   <button type="submit" class="btn btn-primary" [disabled]="projectForm.invalid">Lưu</button>
