@@ -14,8 +14,16 @@ export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.getUserInfo().subscribe(user => {
-      this.user = user;
+    this.authService.currentUser.subscribe(user => {
+      console.log('Current User:', user);  // Kiểm tra đối tượng người dùng ở đây
+      if (user) {
+        this.user = user;
+      } else {
+        this.authService.getUserInfo().subscribe(userInfo => {
+          console.log('Fetched User Info:', userInfo);  // Kiểm tra thông tin người dùng nhận được
+          this.user = userInfo;
+        });
+      }
     });
   }
  
