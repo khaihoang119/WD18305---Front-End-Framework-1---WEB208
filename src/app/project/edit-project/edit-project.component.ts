@@ -54,7 +54,7 @@ export class EditProjectComponent implements OnInit {
           alert('Cập nhật thất bại:' + error);
         }
       );
-    }
+    } 
   }
 
   onSubmit() {
